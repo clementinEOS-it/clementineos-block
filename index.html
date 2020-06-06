@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">  
+    <link rel="stylesheet" href="css/fontawesome/all.css" type="text/css">
+    <link rel="stylesheet" href="css/d3/d3-axis.css" type="text/css">    
+
+    <title>clementinEOS-BLOCK</title>
+  </head>
+
+<body>
+  
+  <main role="main" class="flex-shrink-0">
+
+    <div class="container">
+      <h1 class="mt-5">clementinEOS-BLOCK</h1>
+
+      <p class="lead"> 
+        <div class="row" id="chart" width="100%"></div>
+      </p>
+      
+      <div id="app">
+        <p>
+          <h2>Blocks</h2>
+          
+          <div class="list-group">
+
+            <a href="#" class="list-group-item list-group-item-action" v-for="action in actions">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"> {{ action.block_num }} </h5><br /> 
+                  <small> {{ action.trx_id }} </small>
+              </div>
+              <p class="mb-1"><pre><code> {{ action.act.data }}</code></pre></p>
+              <small> {{ action.block_time }} </small>
+            </a>
+
+          </div>
+
+            <div class="alert alert-info" role="alert" v-show="msgsuccess">{{ msgsuccess }}</div>
+            <div class="alert alert-warning" role="alert" v-show="msgwarning">{{ msgwarning }}</div>
+          
+        </p>
+      </div>
+
+    </div>
+  </main>  
+
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+        <center>
+        <p>
+            <a href="https://twitter.com/gzileni?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @gzileni</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="github-button" href="https://github.com/clementinEOS-it" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Follow @clementinEOS-it on GitHub">Follow @clementinEOS-it</a>
+        </p>
+        <p>
+        </span class="text-muted">
+            <img src="img/eosio.png" width="48px" />
+        </span>
+        </p>
+        <p>
+        <span class="text-muted">by 
+            <a href="mailto:giuseppe.zileni@gmail.com" target="_blank">Giuseppe Zileni <i class="fas fa-envelope"></i></a>
+        </span>
+        <span class="text-muted">
+            <a href="https://twitter.com/gzileni?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @gzileni</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </span>
+        </p>
+    </center>
+    </div>
+  </footer>
+
+  <script src="js/jquery/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="js/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/fontawesome/all.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/socket/socket.io.js"></script>
+  <script src="js/lodash/lodash.js"></script>
+  <script src="js/moment/moment.js"></script> 
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="js/d3/realTimeLineChart.js"></script>
+  
+  <script src="js/main.js"></script>
+
+  <script async defer src="https://buttons.github.io/buttons.js"></script> 
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-9970885-31"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-9970885-31');
+  </script>
+  
+  </body>
+</html>
